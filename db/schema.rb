@@ -10,6 +10,44 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 2021_10_04_140502) do
+
+  create_table "cities", force: :cascade do |t|
+    t.string "city_name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "dogs", force: :cascade do |t|
+    t.string "name"
+    t.string "breed"
+    t.string "gender"
+    t.boolean "is_a_good_dog"
+    t.integer "city_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["city_id"], name: "index_dogs_on_city_id"
+  end
+
+  create_table "dogsitters", force: :cascade do |t|
+    t.string "first_name"
+    t.string "last_name"
+    t.integer "age"
+    t.string "gender"
+    t.integer "city_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["city_id"], name: "index_dogsitters_on_city_id"
+  end
+
+  create_table "strolls", force: :cascade do |t|
+    t.datetime "date"
+    t.integer "dog_id"
+    t.integer "dogsitter_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["dog_id"], name: "index_strolls_on_dog_id"
+    t.index ["dogsitter_id"], name: "index_strolls_on_dogsitter_id"
+  end
 
 end
