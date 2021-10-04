@@ -1,6 +1,7 @@
-Dog.delete_all
-Dogsitter.delete_all
-Stroll.delete_all
+# Dog.delete_all
+# Dogsitter.delete_all
+# Stroll.delete_all
+# City.delete_all
 
 ############################################
 # NUMBERS
@@ -8,7 +9,17 @@ Stroll.delete_all
 nb_dogs = 75
 nb_dogsitters = 150
 nb_strolls = 50
-# nb_cities = 25
+nb_cities = 7
+
+############################################
+# CITIES
+
+nb_cities.times do |i|
+  City.create!(
+    city_name: Faker::Address.city,
+  )
+end
+puts "#{nb_cities} cities built!"
 
 ############################################
 # DOGS
@@ -18,6 +29,7 @@ nb_dogs.times do |i|
     name: Faker::Creature::Dog.name,
     breed: Faker::Creature::Dog.breed,
     gender: Faker::Creature::Dog.gender,
+    city_id: City.all.shuffle.last.id,
     is_a_good_dog: true,
   )
 end
@@ -32,6 +44,7 @@ nb_dogsitters.times do |i|
     last_name: Faker::Name.last_name,
     gender: Faker::Gender.type,
     age: rand(18..70),
+    city_id: City.all.shuffle.last.id,
   )
 end
 puts "#{nb_dogsitters} dogsitters created!"
@@ -50,15 +63,6 @@ end
 
 puts "#{nb_strolls} strolls scheduled!"
 
-
 ############################################
-# CITIES
 
-# nb_cities.times do |i|
-#   City.create!(
-#     name: Faker::Address.city,
-#   )
-#   puts "City n°#{i+1} is built!"
-# end
-
-############################################
+puts "Seeding done!"
