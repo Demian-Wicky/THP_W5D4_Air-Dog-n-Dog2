@@ -1,4 +1,4 @@
-# Air-Dog-n-Dog
+# Air-Dog-n-Dog (100% finished)
 
 A Ruby on Rails application inspired by airbnb containing a relational database.
 The data comes from the `db>seeds.rb` file.
