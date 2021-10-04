@@ -1,24 +1,21 @@
-# README
+# Air-Dog-n-Dog
+A Ruby on Rails application inspired by airbnb containing a relational database.
+The data comes from the `db>seeds.rb` file.
+<br><br>
+<img src="preview/AirDogNDog.svg" >
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Table of contents
+* [General info](#general-info)
+* [Technologies](#technologies)
+* [Setup](#setup)
 
-Things you may want to cover:
+## General info
 
-* Ruby version
+Made during [The Hacking Project](https://www.thehackingproject.org) course on Week5 Day4.
 
-* System dependencies
+## Technologies
 
-* Configuration
+Project is created with
 
-* Database creation
+- Ruby on Rails 5.2.3
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
