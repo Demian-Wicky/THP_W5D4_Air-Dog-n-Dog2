@@ -2,8 +2,8 @@
 
 A Ruby on Rails application inspired by airbnb containing a relational database.
 The data comes from the `db>seeds.rb` file.
-`<br><br>`
-`<img src="preview/AirDogNDog.svg" >`
+<br><br>
+<img src="preview/AirDogNDog.svg" >
 
 ## Table of contents
 
